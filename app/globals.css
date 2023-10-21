@@ -1,0 +1,155 @@
+
+html {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+body{
+  overflow-x: hidden;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'daisyui/dist/full.css';
+
+.bg-gradient-black-transparent {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
+
+.ant-select-selection-search-input:focus{
+  --tw-ring-color:none;
+}
+
+:where(.css-dev-only-do-not-override-i0102m).ant-btn:not(:disabled):focus-visible{
+  outline:none;
+  color:none;
+  border-color: none;
+}
+:where(.css-dev-only-do-not-override-i0102m).ant-btn:focus-visible{
+  outline:none;
+  color:none;
+  border-color: none;
+}
+:where(.css-dev-only-do-not-override-i0102m).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover{
+  border: none;
+  color: none;
+}
+:where(.css-dev-only-do-not-override-i0102m).ant-btn-default:hover{
+  border: none;
+  color: none;
+}
+.ant-select-selector{
+  padding: 0px!important;
+}
+.ant-select-single .ant-select-selector .ant-select-selection-search{
+  inset-inline-start: 0px;
+    inset-inline-end: 0px;
+}
+
+.no-padding, .no-padding * {
+  padding: 0 !important;
+
+}
+
+
+.anticon-close-circle, .ant-picker-clear{
+  background-color: transparent!important;
+  margin-right: 5px;
+}
+
+.anticon-close-circle svg{
+  fill: red;
+}
+
+.anticon-calendar svg{
+  fill: black;
+}
+
+.ant-picker-active-bar{
+  margin-inline-start:0px!important;
+  background-color: rgb(255,66,67)!important;
+}
+:where(.css-dev-only-do-not-override-i0102m).ant-select-single .ant-select-selector,
+:where(.css-dev-only-do-not-override-i0102m).ant-picker .ant-picker-input >input{
+  font-size: 16px;
+}
+
+.ant-tabs-nav{
+  padding: 0px!important;
+  height: fit-content;
+  border-radius: 50px;
+  background-color: #F5F5F5;
+  
+}
+
+.ant-tabs-tab{
+  padding: 5px!important;
+  border: none!important;
+}
+
+.ant-tabs-tab-active .my-button{
+  padding: 5px!important;
+  background-color: white!important;
+  color: #F47777;
+}
+
+.my-button{
+  background-color: transparent!important;
+  color: black;
+}
+
+.ant-tabs-ink-bar-animated{
+  display: none!important;
+}
+
+.ant-tabs-nav-wrap{
+  width: 100%!important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between!important;
+  
+  
+}
+
+.ant-select-selector {
+  border: none!important;
+}
+
+.ant-select-selector:focus-within{
+  border: none!important;
+  box-shadow: none!important;
+  
+}
+
+.ant-tabs-nav-list{
+  width: 100%!important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ant-tabs-content-holder{
+  width: 100%!important;
+}
+
+div.h-32 {
+  scrollbar-width: thin;  /* Firefox için */
+  scrollbar-color: rgba(155, 155, 155, 0.7) transparent; /* Firefox için, kaydırma çubuğu rengini ayarlar */
+}
+
+div.h-32::-webkit-scrollbar { 
+  width: 2px;  /* Webkit tarayıcılarda kaydırma çubuğu genişliği */
+}
+
+div.h-32::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.7); /* Webkit tarayıcılarda kaydırma çubuğu rengini ayarlar */
+  border-radius: 0px;
+}
+
+div.h-32:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 0, 0, 0.7); /* fare üzerindeyken kaydırma çubuğu rengini değiştirir */
+}
+
+div.h-32 {
+  transition: all 0.3s;  /* Yumuşak geçiş efekti için */
+}

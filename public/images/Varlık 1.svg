@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="katman_2" data-name="katman 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 143.78 183.43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <g id="katman_1" data-name="katman 1">
+    <g id="User_User_01" data-name="User / User_01">
+      <path id="Vector" class="cls-1" d="m141.28,180.93c0-38.32-31.07-69.39-69.39-69.39S2.5,142.61,2.5,180.93m69.39-99.13c-21.9,0-39.65-17.75-39.65-39.65S49.99,2.5,71.89,2.5s39.65,17.75,39.65,39.65-17.75,39.65-39.65,39.65Z"/>
+    </g>
+  </g>
+</svg>
