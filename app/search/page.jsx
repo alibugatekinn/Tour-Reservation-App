@@ -46,11 +46,7 @@ export default function TurAra() {
       <BlogCarousel/>
       <div className="h-[200px]"></div>
       <div>
-      {turlarimiz.map(tur => (
-        <Link key={tur.id} href={`/turum/${tur.slug}`}>
-          <p>{tur.name}</p>
-        </Link>
-      ))}
+      
     </div>
     </div>
   )
