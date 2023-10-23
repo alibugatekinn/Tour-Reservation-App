@@ -1,16 +1,38 @@
-
+"use client"
 import BlogCarousel from "./components/blog carousel"
 import Categories from "./components/categories"
 import InterestedTours from "./components/interested tours"
 import Carousel from "./components/popular tours carrousel"
 import SearchTour from "./components/search tour"
-
+import React, { useEffect } from "react";
 
 
 export default function Home() {
 
   
+  useEffect(() => {
+    async function fetchData() {
+      // Rastgele bir e-posta ve şifre oluşturalım
+      const randomEmail = `${Math.random().toString(36).substring(7)}@example.com`;
+      const randomPassword = Math.random().toString(36).substring(7);
 
+      const response = await fetch('https://squid-app-68893.ondigitalocean.app/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: randomEmail,
+          password: randomPassword,
+        }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+    }
+
+    fetchData();
+  }, []);
   
 
 
