@@ -23,7 +23,7 @@ export default function Home() {
         },
         body: JSON.stringify({
           email: randomEmail,
-          password: randomPassword,
+          parola: randomPassword,
         }),
       });
 
