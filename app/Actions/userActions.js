@@ -8,7 +8,7 @@ export const loginUser = async (email, password, setSignIn, setEmail, setPasswor
   
   export const logoutUser = async (setSignIn, setEmail, setPassword) => {
     try {
-      const response = await fetch('http://localhost:56000/api/users/logout', {
+      const response = await fetch('https://seashell-app-8ha6z.ondigitalocean.app/api/users/logout', {
         method: 'POST', // veya 'GET', API'nizin tasarımına bağlı
         credentials: 'include', // Çerezleri dahil etmek için
       });
