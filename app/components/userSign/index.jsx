@@ -19,7 +19,7 @@ const formRef = useRef(null); // Form referansı oluşturuldu
     };
   
     try {
-      const response = await fetch('http://localhost:56000/api/users/login', {
+      const response = await fetch('https://seashell-app-8ha6z.ondigitalocean.app/api/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ useEffect(() => {
   const checkUser = async () => {
     try {
       // Fetch isteğini await ile asenkron bir şekilde bekliyoruz.
-      const response = await fetch('http://localhost:56000/api/users/isUser', {
+      const response = await fetch('https://seashell-app-8ha6z.ondigitalocean.app/api/users/isUser', {
         method: 'GET',
         credentials: 'include', // Tarayıcının çerezleri göndermesini sağlar.
       });
