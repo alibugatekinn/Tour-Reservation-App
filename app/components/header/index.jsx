@@ -5,45 +5,63 @@ import { MenuOutlined,CloseOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { usePathname } from 'next/navigation'
+import useStore from '../../state management/store'
+import { loginUser, logoutUser, signupUser } from '../../Actions/userActions';
+
 export default function Header() {
+  const { signIn, setSignIn, email, setEmail, password, setPassword, signmodal, setSignModal } = useStore();
+  
+  const items = signIn ? [ // Eğer email dolu ise bu menü öğeleri gösterilecek
+  {
+    key: '1',
+    label: (
+      <div className='m-0'>
+        <div>Ali Buğatekin</div>
+        <div className='text-gray-500'>{email}</div>
+      </div>
+    ),
+  },
+  {
+    key: '2',
+    label: (
+      <div className='m-0 w-[200px]'>
+        <div>Profil</div>
+      </div>
+    ),
+  },
+  {
+    type: 'divider',
+  },
+  {
+    key: '3',
+    label: (
+      <div className='m-0' onClick={()=>{logoutUser(setSignIn, setEmail, setPassword);}}> {/* handleLogout fonksiyonunu tanımlamanız gerekecek */}
+        <div>Oturumu Kapat</div>
+      </div>
+    ),
+  },
+  
 
-  const items = [
-    {
-      key: '1',
-      label: (
-        <div className='m-0' target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-          <div>Ali Buğatekin</div>
-          <div className=' text-gray-500'>alibugatekin@gmail.com</div>
-        </div>
-      ),
-    },
-    {
-      key: '2',
-      label: (
-        <div className=' m-0 w-[200px]' target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-          <div>Profil</div>
-
-        </div>
-
-      ),
-
-
-    },
-    {
-      type: 'divider',
-    },
-    {
-      key: '3',
-      label: (
-        <div className=' m-0' target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-          <div>Oturumu Kapat</div>
-
-        </div>
-      ),
-
-    },
-
-  ];
+  
+] : [ // Eğer email boş ise bu menü öğeleri gösterilecek
+{
+  key: '1',
+  label: (
+    <div className='m-0' onClick={()=>{setSignModal(true)}}>
+      <div>Oturum Aç</div>
+    </div>
+  ),
+},
+{
+  key: '2',
+  label: (
+    <div className='m-0 w-[200px]'>
+      <div>Kaydol</div>
+    </div>
+  ),
+}
+];
+  
   const menuRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState('right-[-216px]');
 

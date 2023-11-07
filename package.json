@@ -12,6 +12,7 @@
     "@formkit/auto-animate": "^0.8.0",
     "antd": "^5.9.1",
     "autoprefixer": "10.4.15",
+    "axios": "^1.6.0",
     "critters": "^0.0.20",
     "daisyui": "^3.7.7",
     "dayjs": "^1.11.10",
@@ -28,6 +29,6 @@
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "3.3.3",
-    "zustand": "^4.4.1"
+    "zustand": "^4.4.5"
   }
 }
