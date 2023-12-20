@@ -7,17 +7,20 @@ import InterestedTours from '../components/interested tours';
 import BlogCarousel from '../components/blog carousel';
 import { turlarimiz} from '../utils/turlardan';
 import Link from 'next/link';
-
+import useStore from '../state management/store';
 
 export default function TurAra() {
-  
+  const { location, setLocation, date , setDate} = useStore();
  
 
   const numberOfTourCards = 3; // 5 tane TourCard bileşeni oluşturmak için sayıyı ayarlayın
 
   const tourCards = [];
   for (let i = 0; i < turlarimiz.length; i++) {
-    tourCards.push(<TourCard key={i} name={turlarimiz[i].name} slug={turlarimiz[i].slug} />);
+    if(turlarimiz[i].name==location+" Turu"){
+      tourCards.push(<TourCard key={i} name={turlarimiz[i].name} slug={turlarimiz[i].slug} />);
+    }
+    
 }
 
 

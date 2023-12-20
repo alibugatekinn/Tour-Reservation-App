@@ -6,9 +6,13 @@ const useStore = create((set) => ({
   signIn: false,  // Yeni state
   email:'',
   password:'',
+  name:'',
+  surname:'',
   signModal:false,
   setSignModal: (value) => set({ signModal: value }),
   setPassword: (value) => set({ password: value }),
+  setName: (value) => set({ name: value }),
+  setSurname: (value) => set({ surname: value }),
   setEmail: (value) => set({ email: value }),
   setLocation: (value) => set({ location: value }),
   setDate: (value) => set({ date: value }),
