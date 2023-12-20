@@ -35,8 +35,9 @@ const formRef = useRef(null); // Form referansı oluşturuldu
         setEmail('');
         setPassword('');
       }
-  
+      
       const data = await response.json();
+      console.log(data);
       // login başarılı olduğunda bildirim göster
       notification.success({
         message: 'Giriş Başarılı',
@@ -81,6 +82,7 @@ useEffect(() => {
         const errData = await response.json();
         throw new Error(errData.error);
       }
+      console.log("response hataya girmedi. resppnse okay")
       setSignIn(true);
       //setSignModal(false);
       // Yanıtı JSON'a dönüştürüyoruz.
