@@ -14,14 +14,24 @@ export default function Reservation() {
     const [selectedCity, setSelectedCity] = useState(null);
     const [selectedDates, setSelectedDates] = useState(null);
     const [options, setOptions] = useState([]);
-    const { location, setLocation, date , setDate} = useStore();
+    const { location, setLocation, date , setDate, signIn} = useStore();
    
     const showNotification = () => {
-      notification.success({
-        message: 'Rezervasyon Başarılı!',
-        description: 'Yetkili personel sizinle iletişime geçecek.',
-        placement: 'top', // Bildirimin görüneceği konum
-      });
+      if (signIn===true) {
+        notification.success({
+          message: 'Rezervasyon Başarılı!',
+          description: 'Yetkili personel sizinle iletişime geçecek.',
+          placement: 'top', // Bildirimin görüneceği konum
+        });
+      }
+      else{
+        notification.error({
+          message: 'Rezervasyon Başarısız!',
+          description: 'Lütfen önce giriş yapın!',
+          placement: 'top', // Bildirimin görüneceği konum
+        });
+      }
+      
     };
 
     const onChange = (value) => {
