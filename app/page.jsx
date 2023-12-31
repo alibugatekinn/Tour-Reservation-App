@@ -31,8 +31,8 @@ export default function Home() {
       </div>
 
       <Carousel/>
-      <UserSign/>
-      <button onClick={()=>{setSignIn(true)}}>tıkla</button>
+      
+      
       <div className="h-[100px]"></div>
       <Categories/>
       <div className="h-[300px]"></div>

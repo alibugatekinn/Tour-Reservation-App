@@ -11,6 +11,14 @@ import { loginUser, logoutUser, signupUser } from '../../Actions/userActions';
 export default function Header() {
   const { signIn, setSignIn, email, setEmail, password, setPassword, signmodal, setSignModal } = useStore();
   
+ 
+ 
+
+  
+  
+
+
+
   const items = signIn ? [ // Eğer email dolu ise bu menü öğeleri gösterilecek
   {
     key: '1',

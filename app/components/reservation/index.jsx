@@ -7,6 +7,7 @@ const { RangePicker } = DatePicker;
 import useStore from '../../state management/store';
 import { DownOutlined } from '@ant-design/icons';
 import { Select } from 'antd';
+import { notification } from 'antd';
 
 export default function Reservation() {
   
@@ -15,6 +16,14 @@ export default function Reservation() {
     const [options, setOptions] = useState([]);
     const { location, setLocation, date , setDate} = useStore();
    
+    const showNotification = () => {
+      notification.success({
+        message: 'Rezervasyon Başarılı!',
+        description: 'Yetkili personel sizinle iletişime geçecek.',
+        placement: 'top', // Bildirimin görüneceği konum
+      });
+    };
+
     const onChange = (value) => {
         console.log(`selected ${value}`);
       };
@@ -106,12 +115,12 @@ for (let i = 0; i < 5; i++) {
         <hr className=" border-t-1 w-[80%] border-black border-opacity-16 m-1" />
         <span className='text-[18px]'>1325€</span>
       </div>
-      <Link className='w-[30%] h-[75%]'  href={{ pathname: '/search',}}>
-      <div className=" w-full h-full text-[18px] hover:border-none text-white border-none shadow-2xl bg-[#FF4343]  rounded-2xl flex justify-center items-center gap-1">
+      
+      <div onClick={showNotification} className=" res-button w-[30%] h-[75%] text-[18px] hover:border-none text-white border-none shadow-2xl bg-[#FF4343] cursor-pointer  rounded-2xl flex justify-center items-center gap-1">
       <CheckOutlined />
         Rezervasyon Yap
       </div>
-    </Link>
+    
     </div>
 </div>
   )

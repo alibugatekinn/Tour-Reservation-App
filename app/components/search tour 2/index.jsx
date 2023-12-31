@@ -12,14 +12,51 @@ export default function SearchTour2() {
     const [selectedCity, setSelectedCity] = useState(null);
     const [selectedDates, setSelectedDates] = useState(null);
     const [options, setOptions] = useState([]);
-    const { location, setLocation,date,setDate} = useStore();
+    const { location, setLocation,date,setDate,setMatchedTours2,matchedTours2, filteredTours, setfilteredTours} = useStore();
     const [veri, setveri]=useState(null);
-  console.log(location);
-  console.log(date);
+  
 
+    async function fetchTours() {
+      try {
+        const response = await fetch('https://seashell-app-8ha6z.ondigitalocean.app/api/tours/list');
+        const data = await response.json();
+        if (data && data.tours) {
+          setMatchedTours2(data.tours);
+        }
+      } catch (error) {
+        console.error('Hata:', error);
+      }
+    }
     
  
-   
+  useEffect(() => {
+    fetch('https://seashell-app-8ha6z.ondigitalocean.app/api/tours/list')
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.tours) {
+          setMatchedTours2(data.tours);
+        }
+      })
+      .catch(error => console.error('Hata:', error));
+  }, []); // Boş bağımlılık listesi: Bileşen yüklendiğinde bir kez çalışır
+
+  useEffect(() => {
+    console.log(matchedTours2, "liste2");
+    if (location === '') {
+      setfilteredTours(matchedTours2);
+      
+      
+    } else {
+      // location değerine göre filtreleme işlemi yapabilirsiniz
+      const filtered = matchedTours2.filter(tour => tour.name.includes(location));
+      setfilteredTours(filtered);
+      
+
+      
+    }
+  }, [matchedTours2]); // matchedTours2 veya location değiştiğinde çalışır
+  
+
 
   const getPanelValue = (searchText) => {
     if (!searchText) return [];
@@ -89,7 +126,7 @@ export default function SearchTour2() {
       </div>
       
       <Button 
- type='button' className='w-[30%] text-[18px]  hover:border-none text-white border-none shadow-2xl bg-[#FF4343] h-[75%]  rounded-2xl justify-center items-center gap-1'  icon={<SearchOutlined />}>
+ type='button' onClick={()=>{fetchTours()}} className='w-[30%] text-[18px]  hover:border-none text-white border-none shadow-2xl bg-[#FF4343] h-[75%]  rounded-2xl justify-center items-center gap-1'  icon={<SearchOutlined />}>
         Tur Arama
       </Button>
       

@@ -5,24 +5,43 @@ import SearchTour2 from '../components/search tour 2'
 import TourCard from '../components/tourCard'
 import InterestedTours from '../components/interested tours';
 import BlogCarousel from '../components/blog carousel';
-import { turlarimiz} from '../utils/turlardan';
-import Link from 'next/link';
 import useStore from '../state management/store';
+import { useEffect, useState } from 'react';
+import UserSign from '../components/userSign';
 
 export default function TurAra() {
-  const { location, setLocation, date , setDate} = useStore();
+  const { location,filteredTours,matchedTours2,setfilteredTours, setSignIn} = useStore();
+  
+
+
  
+  
+useEffect(() => {
+  console.log('filteredTours:', filteredTours);
 
-  const numberOfTourCards = 3; // 5 tane TourCard bileşeni oluşturmak için sayıyı ayarlayın
+}, [filteredTours])
 
-  const tourCards = [];
-  for (let i = 0; i < turlarimiz.length; i++) {
-    if(turlarimiz[i].name==location+" Turu"){
-      tourCards.push(<TourCard key={i} name={turlarimiz[i].name} slug={turlarimiz[i].slug} />);
-    }
+
+
+  
+
+const tourCards = filteredTours.map((tour) => (
     
-}
+  <TourCard
+    key={tour._id} 
+    key2={tour._id} 
+    name={tour.name}
+    slug={"sabit-tur"}
+    routes={tour.routes}
+    genres={tour.genres}
+    program={tour.program}
+    destinations={tour.destinations}
+    generalPhotos={tour.generalPhotos}
+    generalInformation={tour.generalInformation}
+  />
 
+  
+));
 
   return (
     <div className='w-full h-fit flex flex-col justify-center items-center'>
@@ -48,6 +67,7 @@ export default function TurAra() {
       <div className="h-[200px]"></div>
       <BlogCarousel/>
       <div className="h-[200px]"></div>
+      
       <div>
       
     </div>

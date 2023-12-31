@@ -110,6 +110,9 @@ useEffect(() => {
   checkUser();
 }, []);
 
+useEffect(() => {
+  console.log(signIn);
+}, [signIn])
 
 
   const handleCancel = () => {
@@ -134,7 +137,7 @@ useEffect(() => {
   };
 
   return (
-    <div className="p-5">
+    <div className=" z-50 p-5">
 
       <Modal title="Kullanıcı Girişi" open={signModal} footer={null} closable={true} onCancel={handleCancel}>
         <Form
